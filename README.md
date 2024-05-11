@@ -23,7 +23,7 @@
 
 ### Demo Screeshots
 
-![icanbe Portfolio Desktop Demo](readme-images/Screenshot 2024-05-11 at 18.44.24.png "Desktop Demo")
+![icanbe Portfolio Desktop Demo](readme-images/Screenshot.png "Desktop Demo")
 
 ### Prerequisites
 
