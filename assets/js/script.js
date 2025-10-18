@@ -103,3 +103,77 @@ if (localStorage.getItem("theme") === "light_theme") {
   document.body.classList.remove("light_theme");
   document.body.classList.add("dark_theme");
 }
+
+
+// Credentials carousel init
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('[data-carousel]');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const prev = carousel.querySelector('[data-carousel-prev]');
+    const next = carousel.querySelector('[data-carousel-next]');
+
+    let index = 0;
+
+    function visibleCount() {
+      const viewportWidth = carousel.querySelector('.carousel-viewport').clientWidth;
+      const itemWidth = items[0].getBoundingClientRect().width;
+      return Math.max(1, Math.floor(viewportWidth / itemWidth));
+    }
+
+    function maxIndex() {
+      return Math.max(0, items.length - visibleCount());
+    }
+
+    function update() {
+      const trackStyle = getComputedStyle(track);
+      const gap = parseFloat(trackStyle.gap) || 16;
+      const trackPaddingLeft = parseFloat(trackStyle.paddingLeft) || 0;
+      const itemWidth = items[0].getBoundingClientRect().width;
+
+      // subtract track left padding so last item doesn't get pushed out
+      const move = Math.max(0, (itemWidth + gap) * index - trackPaddingLeft);
+      track.style.transform = `translateX(-${move}px)`;
+      prev.disabled = index === 0;
+      next.disabled = index >= maxIndex();
+    }
+
+    prev.addEventListener('click', function () {
+      index = Math.max(0, index - 1);
+      update();
+    });
+
+    next.addEventListener('click', function () {
+      index = Math.min(maxIndex(), index + 1);
+      update();
+    });
+
+    window.addEventListener('resize', function () {
+      index = Math.min(index, maxIndex());
+      update();
+    });
+
+    // autoplay (optional)
+    let auto = setInterval(function () {
+      index = (index >= maxIndex() ? 0 : index + 1);
+      update();
+    }, 4000);
+
+    carousel.addEventListener('mouseenter', function () { clearInterval(auto); });
+    carousel.addEventListener('mouseleave', function () {
+      auto = setInterval(function () {
+        index = (index >= maxIndex() ? 0 : index + 1);
+        update();
+      }, 4000);
+    });
+
+    // ensure correct sizes after images load
+    window.addEventListener('load', update);
+
+    // initial layout (DOM ready)
+    update();
+  });
+}
+// ...existing code...
