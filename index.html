@@ -1,1146 +1,378 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="antialiased">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>icanbe - personal portfolio</title>
-
-  <!-- 
-    - favicon
-  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akanbi Abdullahi — Portfolio</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Tailwind CDN (works on GitHub Pages) -->
+  <script>
+    // configure Tailwind for class-based dark mode
+    window.tailwind = {
+      config: {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#eef2ff',
+                100: '#e0e7ff',
+                500: '#2563eb',
+                700: '#1e40af'
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-    rel="stylesheet">
+  <!-- custom css tweaks -->
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+<body id="top" class="bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100">
 
-<body id="top" class="dark_theme">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-slate-900/70 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="text-2xl font-extrabold">icanbe<span class="text-primary-500">.</span></div>
+        <div class="text-sm text-slate-500 dark:text-slate-400"></div>
+      </a>
 
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <h1 class="h1 logo">
-        <a href="#">icanbe<span>.</span></a>
-      </h1>
-
-      <div class="navbar-actions">
-
-        <select name="language" id="lang">
-          <option value="en">En</option>
-          <option value="ar">Ar</option>
-        </select>
-
-        <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
-          <span class="icon"></span>
-        </button>
-
-      </div>
-
-      <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
-        <span class="one"></span>
-        <span class="two"></span>
-        <span class="three"></span>
-      </button>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link">Home.</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">About.</a>
-          </li>
-
-          <li>
-            <a href="#skills" class="navbar-link">Skills.</a>
-          </li>
-
-          <li>
-            <a href="#portfolio" class="navbar-link">Portfolio.</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link">Contact.</a>
-          </li>
-
-        </ul>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="hover:text-primary-500">About</a>
+        <a href="#skills" class="hover:text-primary-500">Skills</a>
+        <a href="#credentials" class="hover:text-primary-500">Credentials</a>
+        <a href="#projects" class="hover:text-primary-500">Projects</a>
+        <a href="#contact" class="hover:text-primary-500">Contact</a>
       </nav>
 
+      <div class="flex items-center gap-3">
+        <!--<select id="lang" class="hidden sm:block p-1 rounded border text-sm bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+          <option>En</option>
+          <option>Ar</option>
+        </select> -->
+
+        <!-- Theme toggle -->
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+          <svg id="sun" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg id="moon" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <!-- Mobile nav toggle -->
+        <button id="mobileBtn" class="md:hidden p-2">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18M3 6h18M3 18h18" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto p-4 flex flex-col gap-3">
+        <a href="#about" class="py-2">About</a>
+        <a href="#skills" class="py-2">Skills</a>
+        <a href="#credentials" class="py-2">Credentials</a>
+        <a href="#projects" class="py-2">Projects</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </div>
     </div>
   </header>
 
-
-
-
-
+  <!-- HERO -->
   <main>
-    <article class="container">
+    <section id="home" class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-8 py-16 px-6">
+      <div>
+        <p class="text-sm text-primary-500 font-medium">Hello, I'm</p>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">Akanbi Abdullahi </h1> <h4 class="text-2xl md:text-3xl font-semibold">a Data Engineer</h4>
+        <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-xl">
+          I build reliable backend systems, clean data pipelines and clear visual stories. I move projects from raw data to actionable insights.
+        </p>
 
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="hero" id="home">
-
-        <figure class="hero-banner">
-
-          <picture>
-            <source srcset="assets/images/a33a4c2d2f.jpg" media="(min-width: 768px)">
-            <source srcset="assets/images/icanbe2-removebg-preview.png" media="(min-width: 500px)">
-            <img src="./assets/images/icanbe2-removebg-preview.png" alt="A man in a blue shirt with a happy expression"
-              class="w-100">
-          </picture>
-
-        </figure>
-
-        <div class="hero-content">
-
-          <h2 class="h2 hero-title">We Design & Build Creative Products</h2>
-
-          <a href="#contact" class="btn btn-primary">Get in touch</a>
-
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-700 text-white px-4 py-2 rounded shadow">Get in touch</a>
+          <a href="https://1drv.ms/w/c/09b886f9d8b724cf/EfBKWcEwzptPp0VG8fX-2LUBKQSyJyZetjZ2Se5A94WVNQ?e=raERcX" class="inline-flex items-center gap-2 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded">Resume</a>
         </div>
 
-        <ul class="hero-social-list">
+        
+          <div class="flex space-x-4 mt-4">
+  <a href="https://github.com/icanbe444" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+    <i class="fa-brands fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+    <i class="fa-brands fa-linkedin text-xl"></i>
+  </a>
+</div>
 
-          <li>
-            <a href="https://www.facebook.com/icanbe444" class="hero-social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-
-              <div class="tooltip">Facebook</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://twitter.com/icanbe444" class="hero-social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-
-              <div class="tooltip">Twitter</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.linkedin.com/in/abdullahi-akanbi/" class="hero-social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-
-              <div class="tooltip">Linkedin</div>
-            </a>
-          </li>
-
-        </ul>
-
-        <a href="#stats" class="scroll-down">Scroll</a>
-
-      </section>
-
-
-
-
-
-      <!-- 
-        - #STATS
-      -->
-
-      <section class="stats" id="stats">
-        <ul class="stats-list">
-
-          <li>
-            <a href="#" class="stats-card">
-
-              <div class="card-icon">
-                <img src="./assets/images/stats-card_icon-1.png" alt="Badge icon">
-              </div>
-
-              <h2 class="h2 card-title">
-                2+ <strong>Years of Experience</strong>
-              </h2>
-
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="stats-card">
-
-              <div class="card-icon">
-                <img src="./assets/images/stats-card_icon-2.png" alt="Checkmark icon">
-              </div>
-
-              <h2 class="h2 card-title">
-                12+ <strong>Completed Projects</strong>
-              </h2>
-
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="stats-card">
-
-              <div class="card-icon">
-                <img src="./assets/images/stats-card_icon-3.png" alt="Peoples rating icon">
-              </div>
-
-              <h2 class="h2 card-title">
-                10+ <strong>Happy Clients</strong>
-              </h2>
-
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-
-            </a>
-          </li>
-
-        </ul>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="about" id="about">
-
-        <figure class="about-banner">
-          <img src="assets/images/icanbe1-removebg-preview.png" alt="A man in a alice blue shirt with a thinking expression"
-            class="w-100">
-        </figure>
-
-        <div class="about-content section-content">
-
-          <p class="section-subtitle">About me</p>
-
-          <h2 class="h3 section-title">Need a Creative Product? I can Help You!</h2>
-
-          <p class="section-text">
-            Greetings! I'm Akanbi Abdullahi, a seasoned backend Python developer with a penchant for delving into the intricate realms of data analytics and machine learning. Recently adorned with an MSC in Information Technology with Business Intelligence from Robert Gordon University, Aberdeen, I'm poised at the forefront of this evolving landscape. Over the past 8 years, my journey has been a tapestry of technical acumen and linguistic finesse, blending my expertise in Python with a foundation in English language studies. This unique fusion has not only propelled my proficiency in backend development but has also primed me for the challenges and opportunities that data science presents. When I'm not unraveling data mysteries or crafting elegant code, you'll find me indulging in my passions for traveling and badminton, enriching my experiences and fortifying my resolve to conquer new horizons in the realms of technology and data. Explore my portfolio and witness the convergence of innovation and insight!
-          </p>
-
-          <div class="btn-group">
-            <!-- <button class="btn btn-secondary">Hire me</button> -->
-
-            <button  href="https://1drv.ms/w/c/09b886f9d8b724cf/EfBKWcEwzptPp0VG8fX-2LUBKQSyJyZetjZ2Se5A94WVNQ?e=raERcX" class="btn btn-primary">Resume</button>
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-
-      <section class="skills" id="skills">
-
-        <div class="skills-content section-content">
-
-          <p class="section-subtitle">My skills</p>
-
-          <h2 class="h3 section-title">My skills</h2>
-
-          <p class="section-text">
-            I develop simple, intuitive and responsive user interface that helps users get things done with less effort
-            and time
-            with those technologies.
-          </p>
-
-          <div class="skills-toggle" data-toggle-box>
-            <button class="toggle-btn active" data-toggle-btn>Skills</button>
-
-            <button class="toggle-btn" data-toggle-btn>Tools</button>
-          </div>
-
-        </div>
-
-        <div class="skills-box" data-skills-box>
-
-          <ul class="skills-list">
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">HTML5</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/html5.png" alt="HTML5 logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">CSS3</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/css3.png" alt="CSS3 logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Python</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/Python(1).png" alt="JavaScript logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Java</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/java.png" alt="TypeScript logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">SQL</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/jquery.png" alt="jQuery logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">R Programming</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/Rlogo(1).png" alt="R Programming logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">PHP</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/php(1).png" alt="Angular logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Data analytics</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/data(1).png" alt="React logo">
-                </div>
-              </div>
-            </li>
-
-            <!-- <li>
-              <div class="skill-card">
-                <div class="tooltip">Vue</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/vue.png" alt="Vue logo">
-                </div>
-              </div>
-            </li> -->
-
-            <!-- <li>
-              <div class="skill-card">
-                <div class="tooltip">Firebase</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/firebase.png" alt="Firebase logo">
-                </div>
-              </div>
-            </li> -->
-
-            <!-- <li>
-              <div class="skill-card">
-                <div class="tooltip">PugJs</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/pugjs.png" alt="PugJs logo">
-                </div>
-              </div>
-            </li> -->
-
-            <!-- <li>
-              <div class="skill-card">
-                <div class="tooltip">SASS</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/sass.png" alt="SASS logo">
-                </div>
-              </div>
-            </li> -->
-
-          </ul>
-
-          <ul class="tools-list">
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Wordpress</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/WordPress.png" alt="Wordpress logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Spreadsheet</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/spreadsheet.png" alt="Spreadsheet logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Tableau</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/tableau(1).png" alt="Tableau logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Git</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/git.png" alt="Git logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Power BI</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/Power_BI_Logo.svg(1).png" alt="Power BI">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Command Line</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/command.png" alt="Command Line logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">VS Code</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/vs-code.png" alt="VS Code logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Jira</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/jirapng(1).png" alt="Jira logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">SSIS</div>
-
-                <div class="card-icon">
-                  <img src="assets/images/SSIS-logo(1).png" alt="SSIS logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Slack</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/slack.png" alt="Slack logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Photoshop</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/photoshop.png" alt="Photoshop logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">AWS</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/aws.png" alt="AWS">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">SQL</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/sql(1).jpg" alt="SQL">
-                </div>
-              </div>
-            </li>
-            
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Azure</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/azure(1).png" alt="Azurw">
-                </div>
-              </div>
-            </li>
-          </ul>
- 
-        </div>
-
-      </section>
-
-
-
-      <!-- 
-        - #CREDENTIALS
-      -->
-  <!-- replaced credentials section with carousel -->
-  <section class="skills credentials" id="credentials">
-
-    <div class="skills-content section-content">
-
-      <p class="section-subtitle">My Credentials</p>
-
-      <h2 class="h3 section-title">Credentials</h2>
-
-      <p class="section-text">
-        Over the years, I have gathered some important credentials that have helped me in my career as a developer and data analyst.
-      </p>
-
-    </div>
-
-    <div class="credentials-carousel" data-carousel>
-      <button class="carousel-btn prev" data-carousel-prev aria-label="Previous">‹</button>
-
-      <div class="carousel-viewport">
-        <div class="carousel-track">
-          <!-- each original <li> credential becomes an item -->
-          <div class="carousel-item">
-            <div class="skill-card">
-              <div class="tooltip">Comptia+</div>
-              <div class="card-icon">
-                <a href="https://www.credly.com/users/abdullahiakanbi/edit#credly"><img src="./assets/images/unnamed.png" alt="Comptia+"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="skill-card">
-              <div class="tooltip">Google Data Analytics</div>
-              <div class="card-icon">
-                <a href="https://www.credly.com/users/abdullahiakanbi/edit#credly"><img src="./assets/images/google.png" alt="Google Data Analytics"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="skill-card">
-              <div class="tooltip">ICDL Africa</div>
-              <div class="card-icon">
-                <a href="https://www.credly.com/users/abdullahiakanbi/edit#credly"><img src="./assets/images/icdl.png" alt="ICDL Africa"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="skill-card">
-              <div class="tooltip">Meta Database Engineer</div>
-              <div class="card-icon">
-                <a href="https://www.credly.com/users/abdullahiakanbi/edit#credly"><img src="./assets/images/meta.png" alt="Meta Database Engineer"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="skill-card">
-              <div class="tooltip">IBM Data Analyst</div>
-              <div class="card-icon">
-                <a href="https://www.credly.com/users/abdullahiakanbi/edit#credly"><img src="./assets/images/ibm.png" alt="IBM Data Analyst"></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- add more <div class="carousel-item">... as needed -->
         </div>
       </div>
 
-      <button class="carousel-btn next" data-carousel-next aria-label="Next">›</button>
-    </div>
+      <div class="flex justify-center">
+        <!-- use your hero image -->
+        <img src="./assets/images/icanbe2.jpeg" alt="Akanbi" class="w-72 md:w-96 rounded-lg shadow-lg">
+      </div>
+    </section>
 
-    <!-- keep tools list below (unchanged) -->
-    <div class="skills-box">
-      <ul class="tools-list">
-        <!-- ...existing tools-list items... -->
-      </ul>
-    </div>
+    <!-- ABOUT -->
+    <section id="about" class="bg-slate-50 dark:bg-slate-800 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <div class="md:col-span-2">
+            <h2 class="text-2xl font-semibold">About me</h2>
+            <p class="mt-3 text-slate-600 dark:text-slate-300">
+              I have transitioned from a backend Python developer into data analysis, creating interactive dashboards, uncovering insights, and helping teams make smarter decisions.
+              Today, I’m evolving further as a data engineer, designing and maintaining data pipelines that keep information flowing efficiently from source to insight. I enjoy travels and badminton.
+            </p>
 
-  </section>
+            <ul class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <li><strong>Experience:</strong> 8+ years</li>
+              <li><strong>Location:</strong> Manchester, UK</li>
+              <li><strong>Tools:</strong> Python, SQL, Power BI, Tableau, Excel</li>
+              <li><strong>Education:</strong> MSc — Information Technology (Business Intelligence) — Robert Gordon University</li>
+            </ul>
+          </div>
+
+          <div class="p-4 border rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+            <h3 class="font-medium">Quick facts</h3>
+            <ol class="mt-2 text-sm space-y-2 text-slate-600 dark:text-slate-300">
+              <li>Backend dev (Python)</li>
+              <li>Data cleaning & visualization</li>
+              <li>Machine learning experiments</li>
+            </ol>
+            <a href="#projects" class="mt-4 inline-block text-primary-500">View projects →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TOOLS -->
+    <section id="skills" class="py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Skills & Tools</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">I build user interfaces, data pipelines and dashboards. Tools I use daily:</p>
+
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <!-- Skill logos (replace src with your images) -->
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/spreadsheet.png" alt="Excel" class="w-12 h-12">
+            <span class="mt-2 text-xs">Excel</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/azure(1).png" alt="Azure" class="w-12 h-12">
+            <span class="mt-2 text-xs">Azure</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/Python(1).png" alt="Python" class="w-12 h-12">
+            <span class="mt-2 text-xs">Python</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/tableau(1).png" alt="Tableau" class="w-12 h-12">
+            <span class="mt-2 text-xs">Tableau</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/sql(1).jpg" alt="SQL" class="w-12 h-12">
+            <span class="mt-2 text-xs">SQL</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/Power_BI_Logo.svg(1).png" alt="Power BI" class="w-12 h-12">
+            <span class="mt-2 text-xs">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TOOLS 2-->
+    <section id="skills" class="py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        
+
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <!-- Skill logos (replace src with your images) -->
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/aws.png" alt="AWS" class="w-12 h-12">
+            <span class="mt-2 text-xs">AWS</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/Rlogo(1).png" alt="R" class="w-12 h-12">
+            <span class="mt-2 text-xs">R</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/git.png" alt="Git" class="w-12 h-12">
+            <span class="mt-2 text-xs">Git</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/html5.png" alt="HTML5" class="w-12 h-12">
+            <span class="mt-2 text-xs">HTML5</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/jirapng(1).png" alt="Jira" class="w-12 h-12">
+            <span class="mt-2 text-xs">Jira</span>
+          </div>
+
+          <div class="skill-card p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center">
+            <img src="./assets/images/WordPress.png" alt="WordPress" class="w-12 h-12">
+            <span class="mt-2 text-xs">WordPress</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
-      
+    <!-- CREDENTIALS -->
+    <section id="credentials" class="py-12 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Credentials</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">This is how far i have come with hard work and dedication.</p>
 
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <!-- Replace hrefs with your credential links -->
+          <a href="https://www.credly.com/badges/320b658b-14dc-4aab-b37f-290eb9e6c1f7/public_url" class="credential" target="_blank" rel="noopener">
+            <img src="./assets/images/unnamed.png" alt="CompTIA Data+" class="w-full h-24 object-contain">
+            <p class="text-sm mt-2 text-center">CompTIA Data+</p>
+          </a>
 
-      <!-- 
-        - #PROJECTS
-      -->
+          <a href="https://www.credly.com/badges/131ea2c6-0f06-4667-acba-e13f37a74fbe/public_url" class="credential" target="_blank" rel="noopener">
+            <img src="./assets/images/meta.png" alt="Meta Database Engineer" class="w-full h-24 object-contain">
+            <p class="text-sm mt-2 text-center">Meta — Database Engineer</p>
+          </a>
 
-      <section class="project" id="portfolio">
+          <a href="https://www.credly.com/badges/a2cd113f-5e7d-4be3-abad-e0f7e22937e2/public_url" class="credential" target="_blank" rel="noopener">
+            <img src="./assets/images/awspractictioner.png" alt="AWS" class="w-full h-24 object-contain">
+            <p class="text-sm mt-2 text-center">AWS</p>
+          </a>
 
-        <ul class="project-list">
+          <a href="https://www.credly.com/badges/12464eb8-0077-4b31-a47d-8bd8d3f99bd2/public_url" class="credential" target="_blank" rel="noopener">
+            <img src="./assets/images/google.png" alt="Google Data Analytics" class="w-full h-24 object-contain">
+            <p class="text-sm mt-2 text-center">Google Data Analytics</p>
+          </a>
 
-          <li>
-            <div class="project-content section-content">
+          <a href="https://www.credly.com/badges/c2835137-0919-4464-b7cf-0b62081012e1/public_url" class="credential" target="_blank" rel="noopener">
+            <img src="./assets/images/ibm.png" alt="IBM Data Analyst" class="w-full h-24 object-contain">
+            <p class="text-sm mt-2 text-center">IBM Data Analyst</p>
+          </a>
+          
+        </div>
+      </div>
+    </section>
 
-              <p class="section-subtitle">My Works</p>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">Selected Projects</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">A few highlights. Full list on my GitHub.</p>
 
-              <h2 class="h3 section-title">See some of my works!</h2>
-
-              <p class="section-text">
-                I create products that serve for the long-term. Well-documented, clean, easy and
-                elegant interface.
-                I clean, preprocess and analyse data. I bring out the story hiding in your data.
-              </p>
-
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <!-- Project card -->
+          <a href="https://docs.google.com/presentation/d/1x2-UdBtopFqekdIm8Gexupoaae7r8WYrOLE3YpYyPv4/edit?usp=sharing" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/Bicycle.png" alt="Cyclistic" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Cyclistic Bike Sharing Analysis</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Data cleaning, analysis and visualization (May 2024)</p>
             </div>
-          </li>
-
-          <li>
-            <a href="https://docs.google.com/presentation/d/1x2-UdBtopFqekdIm8Gexupoaae7r8WYrOLE3YpYyPv4/edit?usp=sharing" class="project-card">
-
-              <figure class="card-banner">
-                <img  src="assets/images/Bicycle.png" class="w-100" alt="A bicycle">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Cyclistic Bike Sharing Analysis</h3>
-
-                <time class="publish-date" datetime="2022-04">May 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="https://public.tableau.com/app/profile/abdullahi.akanbi/viz/BritishAirwaysReviews_17269477548530/Dashboard1?publish=yes" class="project-card">
-
-              <figure class="card-banner">
-                <img  src="assets/images/TableauProject.png" class="w-100" alt="A bicycle">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Data Visualization (Dashboard)</h3>
-
-                <time class="publish-date" datetime="2022-04">September 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-          
-
-
-          <li>
-            <a href="https://github.com/icanbe444/data_exploration_project/blob/main/Data_Exploration.sql" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/CTE.png" class="w-100" alt="git repo.">
-              </figure>
-
-              <div class="card-content">
-                <h3 href="https://github.com/icanbe444/data_exploration_project/blob/main/Data_Exploration.sql" class="h4 card-title">Data Exploration</h3>
-
-                <time class="publish-date" datetime="2024-04">September 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-
-          <li>
-            <a href="https://github.com/icanbe444/data_cleaning_project/blob/main/Data_Cleaning_Project.sql" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/Cleaning.png" class="w-100" alt="git repo.">
-              </figure>
-
-              <div class="card-content">
-                <h3 href="https://github.com/icanbe444/data_cleaning_project/blob/main/Data_Cleaning_Project.sql" class="h4 card-title">Data Cleaning</h3>
-
-                <time class="publish-date" datetime="2024-04">September 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-          
-          <li>
-            <a href="https://github.com/icanbe444/customer_segmentation_ML_Project" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/MachineLearning.png" class="w-100" alt="git repo.">
-              </figure>
-
-              <div class="card-content">
-                <h3 href="https://github.com/icanbe444/customer_segmentation_ML_Project" class="h4 card-title">customer_segmentation_ML_Project</h3>
-                <time class="publish-date" datetime="2024-04">September 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-          
-          <li>
-            <a href="https://github.com/icanbe444/data_analysis_python/tree/main" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/Regression.png" class="w-100"
-                  alt="A Cassette tape on a mellow apricot background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Data Exploration & Regression Models</h3>
-
-                <time class="publish-date" datetime="2022-04">January 2025</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="https://1drv.ms/p/c/09b886f9d8b724cf/EYPA3kNReMdFtNFdUfLxbtEBM08hfzlhAFfwTuPa1tB8Cg?e=vp9dOo" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/Dashboard.PNG" class="w-100"
-                  alt="Blue digital watch on a dark liver background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Production Performance Analysis</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2025</time>
-              </div>
-              
-            </a>
-          </li>
-
-          <li>
-            <a href="https://app.powerbi.com/groups/me/reports/0d3cd0de-cfe1-4ed0-9826-d8bee24a624a/3d9180758eb9a72ae082?experience=power-bi" class="project-card">
-
-              <figure class="card-banner">
-                <img src="assets/images/PowerBI.png" class="w-100"
-                  alt="Blue digital watch on a dark liver background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Power BI Dashboard</h3>
-
-                <time class="publish-date" datetime="2022-04">October 2024</time>
-              </div>
-
-            </a>
-          </li>
-
-
-
-          <li>
-            <a href="https://foodsandallied.com/" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/Screenshot 2025-04-02 at 16.50.58.png" class="w-100"
-                  alt="foodecommerce.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Food E-commerce</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-
-
-          <li>
-            <a href="https://github.com/icanbe444/pandaspractice/blob/main/ExploratoryDataAnalysis.ipynb" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/dataexplore.png" class="w-100"
-                  alt="foodecommerce.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Data Exploration - Pandas</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2023</time>
-              </div>
-
-            </a>
-          </li>
-
-
-
-
-
-
-          <li>
-            <a href="https://www.thestory.com.ng/" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/blog.png" class="w-100"
-                  alt="foodecommerce.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Blog Creation</h3>
-
-                <time class="publish-date" datetime="2019-04">April 2019</time>
-              </div>
-
-            </a>
-          </li>
-
-
-
-
-
-          <li>
-            <a href="https://aceondo.edu.ng/" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/ACOE.png" class="w-100"
-                  alt="On a yellow background, a digital watch and a glass.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">College Website</h3>
-
-                <time class="publish-date" datetime="2022-04">October 2021</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="http://rabiatakande.com/" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/Rabiat.png" class="w-100"
-                  alt="A fujifilm instant camera on a dark electric blue background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Porfolio</h3>
-
-                <time class="publish-date" datetime="2022-04">May 202</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <!-- <button class="load-more">Load more work</button> -->
-          </li>
-
-        </ul>
-
-      </section>
-
-
-
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
-      <section class="contact" id="contact">
-
-        <div class="contact-content section-content">
-
-          <p class="section-subtitle">Contact</p>
-
-          <h2 class="h3 section-title">Have You Any Project? Please Drop a Message</h2>
-
-          <p class="section-text">
-            Get in touch and let me know how I can help. You can drop a mail and i will respond asap.
-          </p>
-
-          <ul class="contact-list">
-
-            <li class="contact-list-item">
-
-              <div class="contact-item-icon">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
-
-              <div class="wrapper">
-                <h3 class="h4 contact-item-title">Address:</h3>
-
-                <address class="contact-info">
-                  19, Cairo Street, Wuse, II, Abuja, Nigeria
-                </address>
-              </div>
-
-            </li>
-
-            <li class="contact-list-item">
-
-              <div class="contact-item-icon">
-                <ion-icon name="call-outline"></ion-icon>
-              </div>
-
-              <div class="wrapper">
-                <h3 class="h4 contact-item-title">Phone:</h3>
-
-                <a href="tel:01234567789" class="contact-info">(+44) 790 0027 155</a>
-
-                <a href="tel:09765432200" class="contact-info">(+234) 703  0260 674</a>
-              </div>
-
-            </li>
-
-            <li class="contact-list-item">
-
-              <div class="contact-item-icon">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-
-              <div class="wrapper">
-                <h3 class="h4 contact-item-title">Email:</h3>
-
-                <a href="mailto:iabdullahi@tpais-events.com" class="contact-info">abdullahi@tpais-events.com</a>
-
-                <a href="mailto:icanbe444@gmail.com" class="contact-info">icanbe444@gmail.com</a>
-              </div>
-
-            </li>
-
-            <li>
-              <ul class="contac-social-list">
-
-                <li>
-                  <a href="https://www.facebook.com/icanbe444" class="contact-social-link">
-                    <div class="tooltip">Facebook</div>
-
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://twitter.com/icanbe444" class="contact-social-link">
-                    <div class="tooltip">Twitter</div>
-
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://www.linkedin.com/in/abdullahi-akanbi/" class="contact-social-link">
-                    <div class="tooltip">Linkedin</div>
-
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="https://www.youtube.com/channel/UCEfKrpHQkcHZuoJ8_xbBfUQ" class="contact-social-link">
-                    <div class="tooltip">Youtube</div>
-
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-                </li>
-
-              </ul>
-            </li>
-
-          </ul>
-
+          </a>
+
+          <a href="https://public.tableau.com/app/profile/abdullahi.akanbi/viz/BritishAirwaysReviews_17269477548530/Dashboard1?publish=yes" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/TableauProject.png" alt="Tableau" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Data Visualization (Dashboard)</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Tableau project (Sep 2024)</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/icanbe444/sql-data-warehouse-project" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/data_warehouse.png" alt="Data Warehouse" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Data Warehouse Project</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL-based data warehouse project (Oct 2025)</p>
+            </div>
+          </a>
         </div>
 
-        <form action="" class="contact-form">
+        
+      </div>
+      <div class="max-w-6xl mx-auto px-6">
+        
 
-          <div class="form-wrapper">
-
-            <label for="name" class="form-label">Name</label>
-
-            <div class="input-wrapper">
-
-              <input type="text" name="name" id="name" required placeholder="e.g Akanbi Abdullahi" class="input-field">
-
-              <ion-icon name="person-circle"></ion-icon>
-
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <!-- Project card -->
+          <a href="https://1drv.ms/p/c/09b886f9d8b724cf/EYPA3kNReMdFtNFdUfLxbtEBM08hfzlhAFfwTuPa1tB8Cg?e=vp9dOo" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/Dashboard.PNG" alt="Cyclistic" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Performance Analysis Dashboard</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Performance analysis dashboard (Oct 2024)</p>
             </div>
+          </a>
 
-          </div>
-
-          <div class="form-wrapper">
-
-            <label for="email" class="form-label">Email</label>
-
-            <div class="input-wrapper">
-
-              <input type="email" name="email" id="email" required placeholder="e.g abdullahi@tpais-events.com"
-                class="input-field">
-
-              <ion-icon name="mail"></ion-icon>
-
+          <a href="https://public.tableau.com/app/profile/abdullahi.akanbi/viz/BritishAirwaysReviews_17269477548530/Dashboard1?publish=yes" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/Regression.png" alt="Tableau" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Customer Segmentation (Regression) - R</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Customer Segmentation (Oct 2024)</p>
             </div>
+          </a>
 
-          </div>
-
-          <div class="form-wrapper">
-
-            <label for="phone" class="form-label">Phone</label>
-
-            <div class="input-wrapper">
-
-              <input type="tel" name="phone" id="phone" required placeholder="Phone Number" class="input-field">
-
-              <ion-icon name="call"></ion-icon>
-
+          <a href="https://github.com/icanbe444/data_cleaning_project/blob/main/Data_Cleaning_Project.sql" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+            <img src="./assets/images/Cleaning.png" alt="Data Cleaning" class="w-full h-44 object-cover">
+            <div class="p-4 bg-white dark:bg-slate-900">
+              <h3 class="font-semibold">Data Cleaning</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL-based data cleaning project (Sep 2024)</p>
             </div>
+          </a>
+        </div>
 
+        <div class="mt-6 text-center">
+          <a href="https://github.com/icanbe444" class="text-primary-500">See all projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-12 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 items-start">
+        <div>
+          <h2 class="text-2xl font-semibold">Contact</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Have a project? Drop a message or email me:</p>
+
+          <ul class="mt-4 text-sm space-y-2 text-slate-600 dark:text-slate-300">
+            <li><strong>Email:</strong> <a href="mailto:icanbe444@gmail.com" class="text-primary-500">icanbe444@gmail.com</a></li>
+            <li><strong>Phone:</strong> (+44) 790 0027 155</li>
+            <li><strong>Location:</strong> Manchester, UK</li>
+          </ul>
+        </div>
+
+        <form id="contactForm" class="bg-white dark:bg-slate-900 p-4 rounded border border-slate-200 dark:border-slate-800">
+          <label class="block text-sm">Name <input required class="mt-1 w-full rounded border px-2 py-2 bg-white dark:bg-slate-800" type="text" name="name"></label>
+          <label class="block text-sm mt-3">Email <input required class="mt-1 w-full rounded border px-2 py-2 bg-white dark:bg-slate-800" type="email" name="email"></label>
+          <label class="block text-sm mt-3">Message <textarea required class="mt-1 w-full rounded border px-2 py-2 bg-white dark:bg-slate-800" name="message" rows="4"></textarea></label>
+          <div class="mt-4 flex justify-end">
+            <button type="submit" class="bg-primary-500 text-white px-4 py-2 rounded">Send</button>
           </div>
-
-          <div class="form-wrapper">
-
-            <label for="message" class="form-label">Message</label>
-
-            <div class="input-wrapper">
-
-              <textarea name="message" id="message" required placeholder="Write message..."
-                class="input-field"></textarea>
-
-              <ion-icon name="chatbubbles"></ion-icon>
-
-            </div>
-
-          </div>
-
-          <button type="submit" class="btn btn-primary">Send</button>
-
         </form>
-
-      </section>
-
-    </article>
+      </div>
+    </section>
   </main>
 
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <p class="h1 logo">
-        <a href="#">
-          icanbe444<span>.</span>
-        </a>
-      </p>
-
-      <p class="copyright">
-        &copy; 2024 <a href="#">icanbe444</a>. All rights reserved
-      </p>
-
+  <!-- FOOTER -->
+  <footer class="py-8">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-slate-500">
+      © 2025 Akanbi Abdullahi  — <a href="https://github.com/icanbe444" class="text-primary-500">GitHub</a>
     </div>
   </footer>
 
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="go-top" data-go-top title="Go to Top">
-    <ion-icon name="arrow-up"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <!-- scripts -->
+  <script src="./assets/js/main.js"></script>
 </body>
-
 </html>
