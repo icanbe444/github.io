@@ -105,7 +105,10 @@ if (localStorage.getItem("theme") === "light_theme") {
 }
 
 
-// Credentials carousel init
+
+  // ...existing code...
+{
+  // Credentials carousel init
   document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('[data-carousel]');
     if (!carousel) return;
