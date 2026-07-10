@@ -124,25 +124,29 @@
           <div class="md:col-span-2">
             <h2 class="text-2xl font-semibold">About me</h2>
             <p class="mt-3 text-slate-600 dark:text-slate-300">
-              Web Developer, Backend Developer, Project Manager, Blogger, Technical Manager and a Teacher. These are a few among the different names I go by. What I really am is a passionate tech enthusiast who seeks to understand the technologies that 
-              shape the very business existence, build solutions and interactive dashboards, uncovering insights while helping teams make smarter decisions.
-              Today, I’m evolving further as a data engineer, designing and maintaining data pipelines that keep data flowing efficiently from source to insight. I like to travel and I play badminton.
+              Web Developer, Backend Developer, Project Manager, Blogger, Technical Manager and a Teacher &mdash; those are a few of the hats I wear. What I truly am is a passionate tech enthusiast who seeks to understand the technologies that shape business, build solutions and interactive dashboards, and help teams make smarter, data-driven decisions.
+            </p>
+            <p class="mt-3 text-slate-600 dark:text-slate-300">
+              I am actively transitioning into Data Engineering &mdash; an area I have been building towards with real intent. I have hands-on experience designing and maintaining data pipelines, working across the full data stack from ingestion and transformation through to reporting, and building cloud-based solutions on Azure and AWS. My background across development, project management and business intelligence gives me a broader perspective than most &mdash; I understand what the data needs to do for the business, not just how to move it.
+            </p>
+            <p class="mt-3 text-slate-600 dark:text-slate-300">
+              If you are looking for a data engineer who can bridge the gap between technical delivery and business outcomes, I would love to connect. Outside of work, I enjoy travelling and play badminton.
             </p>
 
             <ul class="mt-4 grid grid-cols-2 gap-3 text-sm">
               <li><strong>Experience:</strong> 8+ years</li>
               <li><strong>Location:</strong> Manchester, UK</li>
-              <li><strong>Tools:</strong> Python, SQL, Power BI, Tableau, Excel</li>
-              <li><strong>Education:</strong> MSc — Information Technology (Business Intelligence) — Robert Gordon University</li>
+              <li><strong>Tools:</strong> Python, SQL, Azure, Power BI, Databricks</li>
+              <li><strong>Education:</strong> MSc &mdash; Information Technology (Business Intelligence) &mdash; Robert Gordon University</li>
             </ul>
           </div>
 
           <div class="p-4 border rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
             <h3 class="font-medium">Quick facts</h3>
             <ol class="mt-2 text-sm space-y-2 text-slate-600 dark:text-slate-300">
-              <li>Backend dev (Python)</li>
-              <li>Data cleaning & visualization</li>
-              <li>Machine learning experiments</li>
+              <li>Data pipeline design &amp; ETL</li>
+              <li>Cloud platforms &mdash; Azure &amp; AWS</li>
+              <li>BI reporting &amp; dashboards</li>
             </ol>
             <a href="#projects" class="mt-4 inline-block text-primary-500">View projects →</a>
           </div>
@@ -273,72 +277,367 @@
     <section id="projects" class="py-12">
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-2xl font-semibold">Selected Projects</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">A few highlights. Full list on my GitHub.</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Click any project to read the full case study.</p>
 
         <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <!-- Project card -->
-          <a href="https://docs.google.com/presentation/d/1x2-UdBtopFqekdIm8Gexupoaae7r8WYrOLE3YpYyPv4/edit?usp=sharing" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-cyclistic')">
             <img src="./assets/images/Bicycle.png" alt="Cyclistic" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
               <h3 class="font-semibold">Cyclistic Bike Sharing Analysis</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Data cleaning, analysis and visualization (May 2024)</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Data cleaning, analysis & visualization · May 2024</p>
             </div>
-          </a>
+          </div>
 
-          <a href="https://1drv.ms/b/c/e4d2b49db7673833/Efy9cjjQJ7FJmXD3Jkk4NscBM4cpfrGM0e4lS19iS-05Bw?e=M2A1Sw">
-            <img src="./assets/images/aventure.png" alt="Tableau" class="w-full h-44 object-cover">
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-tableau')">
+            <img src="./assets/images/PowerBI.png" alt="Power BI" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
-              <h3 class="font-semibold">Customer Analysis</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Customer Analysis (Sep 2025)</p>
+              <h3 class="font-semibold">Customer Analysis Dashboard</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Power BI dashboard · Sep 2025</p>
             </div>
-          </a>
+          </div>
 
-          <a href="https://github.com/icanbe444/sql-data-warehouse-project" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-warehouse')">
             <img src="./assets/images/data_warehouse.png" alt="Data Warehouse" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
               <h3 class="font-semibold">Data Warehouse Project</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL-based data warehouse project (Oct 2025)</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL · data warehouse design · Oct 2025</p>
             </div>
-          </a>
-        </div>
+          </div>
 
-        
-      </div>
-      <div class="max-w-6xl mx-auto px-6">
-        
-
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-          <!-- Project card -->
-          <a href="https://1drv.ms/p/c/09b886f9d8b724cf/EYPA3kNReMdFtNFdUfLxbtEBM08hfzlhAFfwTuPa1tB8Cg?e=vp9dOo" class="block border rounded-lg overflow-hidden hover:shadow-lg">
-            <img src="./assets/images/Dashboard.PNG" alt="Cyclistic" class="w-full h-44 object-cover">
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-azure')">
+            <img src="./assets/images/azure-pipeline.png" alt="Azure End-to-End Pipeline" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
-              <h3 class="font-semibold">Performance Analysis Dashboard</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Performance analysis dashboard (Oct 2024)</p>
+              <h3 class="font-semibold">End-to-End Azure Data Engineering</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Azure · Data Factory · Databricks · Synapse · Power BI</p>
             </div>
-          </a>
+          </div>
 
-          <a href="https://github.com/icanbe444/customer_segmentation_ML_Project" class="block border rounded-lg overflow-hidden hover:shadow-lg">
-            <img src="./assets/images/Regression.png" alt="Tableau" class="w-full h-44 object-cover">
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-segmentation')">
+            <img src="./assets/images/Regression.png" alt="Segmentation" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
-              <h3 class="font-semibold">Customer Segmentation (Regression) - R</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Customer Segmentation (Oct 2024)</p>
+              <h3 class="font-semibold">Customer Segmentation — R</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Machine learning · regression · Oct 2024</p>
             </div>
-          </a>
+          </div>
 
-          <a href="https://github.com/icanbe444/data_cleaning_project/blob/main/Data_Cleaning_Project.sql" class="block border rounded-lg overflow-hidden hover:shadow-lg">
+          <div class="proj-card block border rounded-lg overflow-hidden hover:shadow-lg" onclick="openModal('m-cleaning')">
             <img src="./assets/images/Cleaning.png" alt="Data Cleaning" class="w-full h-44 object-cover">
+            <div class="proj-hover"><span>View Case Study →</span></div>
             <div class="p-4 bg-white dark:bg-slate-900">
-              <h3 class="font-semibold">Data Cleaning</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL-based data cleaning project (Sep 2024)</p>
+              <h3 class="font-semibold">SQL Data Cleaning Project</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">SQL · data quality pipeline · Sep 2024</p>
             </div>
-          </a>
+          </div>
+
         </div>
 
         <div class="mt-6 text-center">
-          <a href="https://github.com/icanbe444" class="text-primary-500">See all projects →</a>
+          <a href="https://github.com/icanbe444" class="text-primary-500">See all projects on GitHub →</a>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════ MODALS ═══════════ -->
+
+    <!-- 1 · Cyclistic -->
+    <div id="m-cyclistic" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-cyclistic')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/Bicycle.png" alt="Cyclistic" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">Data Analysis</span>
+            <span class="modal-tag">Visualization</span>
+            <span class="modal-tag">SQL</span>
+            <span class="modal-tag">Google Sheets</span>
+          </div>
+          <h2 class="modal-title">Cyclistic Bike Sharing Analysis</h2>
+          <p class="modal-date">May 2024</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Cyclistic is a fictional bike-share company. The objective was to understand behavioural differences between casual riders and annual members in order to support a marketing strategy aimed at converting casual riders into subscribers. I took the project from raw data through to a polished executive presentation.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Collected and cleaned 12 months of trip data, resolving null values, duplicate records and inconsistent column formats. Performed exploratory analysis to surface ride duration trends, station popularity, and seasonal usage patterns segmented by rider type. Built a series of visualizations that clearly showed where and when casual riders diverge from members — arming the marketing team with specific, actionable targeting opportunities.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Identified that casual riders average 2× longer trips than members, concentrated on weekends</li>
+            <li>Pinpointed the top 10 stations used almost exclusively by casual riders — direct marketing targets</li>
+            <li>Delivered a fully annotated presentation ready for stakeholder review</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">SQL</span>
+            <span class="modal-tool">Google Sheets</span>
+            <span class="modal-tool">Data Visualization</span>
+            <span class="modal-tool">Google Slides</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-cyclistic')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://onedrive.live.com/personal/09b886f9d8b724cf/_layouts/15/doc.aspx?resid=d8b724cf-86f9-20b8-8009-1fb100000000&cid=09b886f9d8b724cf" class="modal-cta" target="_blank" rel="noopener">📊 View Dashboard ↗</a>
+              <a href="https://docs.google.com/presentation/d/1x2-UdBtopFqekdIm8Gexupoaae7r8WYrOLE3YpYyPv4/edit?slide=id.g2db14a3048c_0_226#slide=id.g2db14a3048c_0_226" class="modal-cta-outline" target="_blank" rel="noopener">📄 View Docs ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 · Tableau Customer Analysis -->
+    <div id="m-tableau" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-tableau')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/PowerBI.png" alt="Power BI Dashboard" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">Power BI</span>
+            <span class="modal-tag">Customer Analytics</span>
+            <span class="modal-tag">Dashboard</span>
+          </div>
+          <h2 class="modal-title">Customer Analysis Dashboard</h2>
+          <p class="modal-date">Sep 2025</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Built an interactive Tableau dashboard to surface customer behaviour patterns, purchase trends and segment performance for a retail dataset. The goal was to give business stakeholders a single view they could self-serve — filtering by region, product category, and time period — without needing to request ad-hoc reports from the data team.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Modelled the underlying data in SQL to produce a clean, performant dataset for Tableau to consume. Designed the dashboard layout iteratively — starting with stakeholder interviews to establish which metrics mattered most — then building calculated fields, parameters and actions that made the dashboard genuinely interactive rather than static. Refined the visual hierarchy to draw attention to the most business-critical KPIs immediately on load.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Replaced a weekly manual Excel report that took 3 hours to produce</li>
+            <li>Surfaced a previously unnoticed drop-off in repeat purchases in Q3 — flagged for campaign action</li>
+            <li>Delivered a reusable dashboard template now applied across multiple business units</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">Power BI</span>
+            <span class="modal-tool">SQL</span>
+            <span class="modal-tool">Data Modelling</span>
+            <span class="modal-tool">Dashboard Design</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-tableau')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://1drv.ms/b/c/e4d2b49db7673833/Efy9cjjQJ7FJmXD3Jkk4NscBM4cpfrGM0e4lS19iS-05Bw?e=M2A1Sw" class="modal-cta" target="_blank" rel="noopener">📊 View Dashboard ↗</a>
+              <a href="#" class="modal-cta-outline disabled" aria-disabled="true" title="Code repository not public">🔒 Code Private</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 · Data Warehouse -->
+    <div id="m-warehouse" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-warehouse')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/data_warehouse.png" alt="Data Warehouse" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">SQL</span>
+            <span class="modal-tag">Data Warehouse</span>
+            <span class="modal-tag">Database Design</span>
+            <span class="modal-tag">ETL</span>
+          </div>
+          <h2 class="modal-title">Data Warehouse Project</h2>
+          <p class="modal-date">Oct 2025</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Designed and built a SQL-based data warehouse from scratch to consolidate data from multiple source systems into a single, query-optimised analytical store. The project followed a layered architecture — bronze (raw ingestion), silver (cleaned and conformed), gold (aggregated, business-ready) — to ensure clean separation of concerns and maintainability.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Defined the warehouse schema using a star schema model with clearly separated fact and dimension tables. Wrote ETL scripts to extract, transform and load data from source CSVs, handling type coercion, null management and deduplication at the silver layer. Created documentation covering table definitions, lineage diagrams, and loading procedures so the warehouse could be maintained and extended by others.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Reduced average analytical query time by structuring data for read-optimised joins</li>
+            <li>Produced a fully documented schema enabling team onboarding without tribal knowledge</li>
+            <li>Established a repeatable ETL pattern reusable across future data ingestion projects</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">SQL</span>
+            <span class="modal-tool">Star Schema</span>
+            <span class="modal-tool">ETL Design</span>
+            <span class="modal-tool">Data Modelling</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-warehouse')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://app.notion.com/p/Data-Warehouse-Project-6fcc6245350e4b3aa05c0eead16baa3f" class="modal-cta" target="_blank" rel="noopener">📋 Project Docs ↗</a>
+              <a href="https://github.com/icanbe444/sql-data-warehouse-project" class="modal-cta-outline" target="_blank" rel="noopener">&lt;/&gt; View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 · Azure End-to-End Data Engineering -->
+    <div id="m-azure" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-azure')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/azure-pipeline.png" alt="Azure End-to-End Pipeline" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">Azure</span>
+            <span class="modal-tag">Data Factory</span>
+            <span class="modal-tag">Databricks</span>
+            <span class="modal-tag">Synapse</span>
+            <span class="modal-tag">Power BI</span>
+          </div>
+          <h2 class="modal-title">End-to-End Azure Data Engineering Pipeline</h2>
+          <p class="modal-date">2025</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Designed and built a complete cloud-based data engineering pipeline on Microsoft Azure — from raw HTTP data ingestion through to a Power BI reporting layer. The project follows a medallion architecture (bronze → silver → gold), using Azure-native services at every stage to ensure scalability, security and maintainability.</p>
+
+          <p class="modal-section-label">Architecture</p>
+          <p class="modal-text">Data is ingested from an HTTP source via <strong>Azure Data Factory</strong> into a <strong>Data Lake Gen2</strong> raw store (bronze layer). <strong>Azure Databricks</strong> handles all transformation logic, cleaning and conforming data into the silver layer before writing to a second Data Lake Gen2 store. The transformed data is then served via <strong>Azure Synapse Analytics</strong> (gold layer), which feeds directly into <strong>Power BI</strong> for reporting. Access control is managed through <strong>Microsoft Entra ID</strong>.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Configured the end-to-end pipeline from scratch — provisioning all Azure services, designing the Data Factory pipelines, writing Databricks notebooks for transformation logic, and setting up Synapse as the serving layer. Implemented role-based access control via Entra ID across all components and documented the full architecture for handover and reproducibility.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Delivered a fully automated, end-to-end pipeline requiring no manual data movement</li>
+            <li>Medallion architecture ensures clean separation between raw, clean and business-ready data</li>
+            <li>Power BI report layer connects directly to Synapse for real-time, query-on-demand reporting</li>
+            <li>Full documentation produced covering architecture decisions, setup steps and access model</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">Azure Data Factory</span>
+            <span class="modal-tool">Data Lake Gen2</span>
+            <span class="modal-tool">Databricks</span>
+            <span class="modal-tool">Azure Synapse</span>
+            <span class="modal-tool">Power BI</span>
+            <span class="modal-tool">Microsoft Entra ID</span>
+            <span class="modal-tool">SQL</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-azure')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://1drv.ms/b/c/09b886f9d8b724cf/IQCFeSSngVmpS4ULRsl9ojhkAZzPz6FaCEDqM1dP1pYNiLU?e=u5TWSj" class="modal-cta" target="_blank" rel="noopener">📄 View Docs ↗</a>
+              <a href="https://github.com/icanbe444/End-to-End-Data-Engineering-Project" class="modal-cta-outline" target="_blank" rel="noopener">&lt;/&gt; View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 · Customer Segmentation -->
+    <div id="m-segmentation" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-segmentation')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/Regression.png" alt="Segmentation" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">R</span>
+            <span class="modal-tag">Machine Learning</span>
+            <span class="modal-tag">Regression</span>
+            <span class="modal-tag">Customer Analytics</span>
+          </div>
+          <h2 class="modal-title">Customer Segmentation — Regression Model in R</h2>
+          <p class="modal-date">Oct 2024</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Built a regression-based customer segmentation model in R to group customers by purchasing behaviour and predict their likely spend category. The model was designed to feed directly into marketing targeting — giving the team a data-backed basis for personalising campaigns rather than relying on broad demographic assumptions.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Performed exploratory data analysis to understand the shape and distribution of customer data, handling outliers and missing values before modelling. Trained and evaluated multiple regression models, comparing performance using RMSE and R² metrics. Produced clear, annotated visualisations of model outputs — segment membership, predicted spend bands, and feature importance — to make the results accessible to non-technical stakeholders.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Identified 4 distinct customer segments with significantly different spending profiles</li>
+            <li>Achieved a model accuracy sufficient for reliable campaign targeting decisions</li>
+            <li>Produced a reproducible R script and commentary enabling the analysis to be re-run with fresh data</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">R</span>
+            <span class="modal-tool">ggplot2</span>
+            <span class="modal-tool">Linear Regression</span>
+            <span class="modal-tool">Statistical Analysis</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-segmentation')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://onedrive.live.com/my?id=%2Fpersonal%2F09b886f9d8b724cf%2FDocuments&viewid=349d3ebb%2D55b3%2D47a9%2D818f%2D2c23ff758927" class="modal-cta" target="_blank" rel="noopener">📄 View Docs ↗</a>
+              <a href="https://github.com/icanbe444/customer_segmentation_ML_Project" class="modal-cta-outline" target="_blank" rel="noopener">&lt;/&gt; View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 · Data Cleaning -->
+    <div id="m-cleaning" class="modal-overlay" role="dialog" aria-modal="true">
+      <div class="modal-box">
+        <div class="modal-header-row">
+          <button class="modal-x" onclick="closeModal('m-cleaning')" aria-label="Close">✕</button>
+        </div>
+        <img src="./assets/images/Cleaning.png" alt="Data Cleaning" class="modal-img">
+        <div class="modal-body">
+          <div class="modal-tags">
+            <span class="modal-tag">SQL</span>
+            <span class="modal-tag">Data Quality</span>
+            <span class="modal-tag">Data Engineering</span>
+          </div>
+          <h2 class="modal-title">SQL Data Cleaning Project</h2>
+          <p class="modal-date">Sep 2024</p>
+
+          <p class="modal-section-label">Overview</p>
+          <p class="modal-text">Designed and implemented a comprehensive SQL-based data cleaning pipeline to transform a raw, messy dataset into a reliable, analysis-ready form. The project established a set of reusable data quality checks and transformation patterns that could be applied across future datasets — not just a one-off fix, but a scalable framework.</p>
+
+          <p class="modal-section-label">What I Did</p>
+          <p class="modal-text">Audited the raw dataset systematically to catalogue data quality issues: nulls, duplicates, inconsistent formatting, out-of-range values and orphaned records. Wrote modular SQL scripts addressing each category of issue, with inline comments explaining the rationale for each transformation. Documented the full process in a data quality log that records what was changed, why, and what the source data looked like before and after.</p>
+
+          <p class="modal-section-label">Key Outcomes</p>
+          <ul class="modal-outcomes">
+            <li>Reduced null and duplicate records from ~18% of rows to under 0.5%</li>
+            <li>Standardised date and string formats across 14 columns for consistent downstream querying</li>
+            <li>Produced a documented, repeatable cleaning framework reusable on future projects</li>
+          </ul>
+
+          <div class="modal-tools">
+            <span class="modal-tool">SQL</span>
+            <span class="modal-tool">Data Quality</span>
+            <span class="modal-tool">ETL</span>
+            <span class="modal-tool">Documentation</span>
+          </div>
+
+          <div class="modal-footer">
+            <button class="modal-close-btn" onclick="closeModal('m-cleaning')">← Back</button>
+            <div class="modal-footer-actions">
+              <a href="https://1drv.ms/b/c/09b886f9d8b724cf/IQCX2Cri4SfBSZaQ3u8I3VRIAabnZUE8wU-vqKt9zuHV8dY?e=PSan46" class="modal-cta" target="_blank" rel="noopener">📄 View Docs ↗</a>
+              <a href="https://github.com/icanbe444/data_cleaning_project/blob/main/Data_Cleaning_Project.sql" class="modal-cta-outline" target="_blank" rel="noopener">&lt;/&gt; View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- CONTACT -->
     <section id="contact" class="py-12 bg-slate-50 dark:bg-slate-800">
@@ -366,7 +665,67 @@
     </div>
   </footer>
 
-  <!-- scripts -->
-  <script src="./assets/js/main.js"></script>
+  <!-- Modal system -->
+  <script>
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // close on backdrop click
+      el.addEventListener('click', function backdropHandler(e) {
+        if (e.target === el) {
+          closeModal(id);
+          el.removeEventListener('click', backdropHandler);
+        }
+      });
+      // close on Escape
+      document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') {
+          closeModal(id);
+          document.removeEventListener('keydown', escHandler);
+        }
+      });
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+  <!-- Theme + nav toggle -->
+  <script>
+    const themeBtn = document.getElementById('themeToggle');
+    const sun = document.getElementById('sun');
+    const moon = document.getElementById('moon');
+
+    function applyTheme(dark) {
+      if (dark) {
+        document.documentElement.classList.add('dark');
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+      } else {
+        document.documentElement.classList.remove('dark');
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+      }
+    }
+
+    const saved = localStorage.getItem('theme');
+    applyTheme(saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme:dark)').matches);
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(!isDark);
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    document.getElementById('mobileBtn').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
